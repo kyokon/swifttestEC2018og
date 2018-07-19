@@ -10,6 +10,7 @@ target 'EC2018og' do
   pod 'Firebase'
   pod 'Firebase/Auth'
   pod 'Firebase/Database'
+  pod 'Firebase/Core'
 
   target 'EC2018ogTests' do
     inherit! :search_paths
