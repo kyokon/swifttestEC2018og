@@ -9,29 +9,31 @@
 import Foundation
 import Firebase
 
-class GroupData {
+class OralPresentationData3 {
     
     var ref: DatabaseReference?
     var groupid: String?
-    var number: String?
+    var name: String?
     var body: String?
-    var title: String?
-    var whois: String?
+    var replymesseages : Array? = []
     
     init? (snapshot: DataSnapshot) {
         ref = snapshot.ref
         guard let dict = snapshot.value as? [String:Any] else { return nil }
         guard let groupid  = ref?.key  else { return nil }
-        guard let number  = dict["number"] as? String  else { return nil }
+        guard let name  = dict["name"] as? String  else { return nil }
         guard let body = dict["body"]  as? String else { return nil }
-        guard let title = dict["title"]  as? String else { return nil }
-        guard let whois = dict["whois"]  as? String else { return nil }
+        guard let replymesseages = dict["reply"] as? [String:AnyObject] else { return nil }
+        var repmessages : Array? = []
+        
+        for i in replymesseages.keys {
+            repmessages?.append(i)
+        }
         
         self.groupid = groupid
-        self.number = number
+        self.name = name
         self.body = body
-        self.title = title
-        self.whois = whois
+        self.replymesseages = repmessages
     }
     
 }

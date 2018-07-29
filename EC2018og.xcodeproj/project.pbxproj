@@ -15,6 +15,7 @@
 		991525332100AF0B00839EC3 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991525322100AF0B00839EC3 /* SignupViewController.swift */; };
 		991525352100AF7400839EC3 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991525342100AF7400839EC3 /* LoginViewController.swift */; };
 		991525372101C4C700839EC3 /* groupdata.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991525362101C4C700839EC3 /* groupdata.swift */; };
+		99152539210C16D500839EC3 /* OralPresentationData3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99152538210C16D500839EC3 /* OralPresentationData3.swift */; };
 		99276AE321009DF70049C11B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99276AE221009DF70049C11B /* AppDelegate.swift */; };
 		99276AE521009DF70049C11B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99276AE421009DF70049C11B /* ViewController.swift */; };
 		99276AE821009DF70049C11B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 99276AE621009DF70049C11B /* Main.storyboard */; };
@@ -54,6 +55,7 @@
 		991525322100AF0B00839EC3 /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 		991525342100AF7400839EC3 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		991525362101C4C700839EC3 /* groupdata.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = groupdata.swift; sourceTree = "<group>"; };
+		99152538210C16D500839EC3 /* OralPresentationData3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OralPresentationData3.swift; sourceTree = "<group>"; };
 		99276ADF21009DF70049C11B /* EC2018og.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EC2018og.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		99276AE221009DF70049C11B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		99276AE421009DF70049C11B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -147,6 +149,7 @@
 				99276AEE21009DF80049C11B /* Info.plist */,
 				991519D82100A80000E3E13F /* GoogleService-Info.plist */,
 				991525362101C4C700839EC3 /* groupdata.swift */,
+				99152538210C16D500839EC3 /* OralPresentationData3.swift */,
 			);
 			path = EC2018og;
 			sourceTree = "<group>";
@@ -401,6 +404,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				991525372101C4C700839EC3 /* groupdata.swift in Sources */,
+				99152539210C16D500839EC3 /* OralPresentationData3.swift in Sources */,
 				991525352100AF7400839EC3 /* LoginViewController.swift in Sources */,
 				991525332100AF0B00839EC3 /* SignupViewController.swift in Sources */,
 				99276AE521009DF70049C11B /* ViewController.swift in Sources */,
