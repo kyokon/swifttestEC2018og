@@ -41,7 +41,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                 print("body")
                 print((item?.body)!)
                 
-                self.dbArray.append("n"+(item?.groupid)!+"body"+(item?.body)!)
+                self.dbArray.append((item?.groupid)!+":"+(item?.body)!)
                 print("append end")
                 print(self.dbArray)
                 self.OralDataViewTable.reloadData()
@@ -54,12 +54,24 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     @IBAction func button1(_ sender: Any) {
         //let data = ["name": "test"]
         let data = "testname"
-        DBRef.child("oralPresentationData3/section1/message3/name").setValue(data)
+        
         let data2 = TextField.text!
+        
+        var tmpchild = DBRef.child("oralPresentationData3/section1").childByAutoId()
+        tmpchild.child("name").setValue(data)
+        tmpchild.child("body").setValue(data2)
+        tmpchild.child("reply").childByAutoId().setValue(["name": "test","body": "test"])
+        
+        //let data2 = ["text": TextField.text!]
+       /* DBRef.child("oralPresentationData3/section1/message3/body").setValue(data2)
+        
+        
+        DBRef.child("oralPresentationData3/section1/message3/name").setValue(data)
+       
         //let data2 = ["text": TextField.text!]
         DBRef.child("oralPresentationData3/section1/message3/body").setValue(data2)
         DBRef.child("oralPresentationData3/section1/message3/reply").childByAutoId().setValue(["name": "test","body": "test"])
-        
+        */
         loadData()
         self.OralDataViewTable.reloadData()
     }
