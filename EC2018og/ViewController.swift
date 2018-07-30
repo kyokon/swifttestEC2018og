@@ -19,11 +19,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     var DBRef:DatabaseReference!
     
     
-    var fruits = [String]()
+    var dbArray = [String]()
     
+    //FIRDataEventTypeChildAdded //addchildと同じ機能持ってそう
+    //要素数取れません
     
     func loadData() -> Array<Any> {
-        //fruits
+        dbArray.removeAll()
         //var fruits1 = [String]()
         var DBRefs1:DatabaseReference!
         DBRefs1 = Database.database().reference()
@@ -39,14 +41,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                 print("body")
                 print((item?.body)!)
                 
-                self.fruits.append("n"+(item?.groupid)!+"body"+(item?.body)!)
+                self.dbArray.append("n"+(item?.groupid)!+"body"+(item?.body)!)
                 print("append end")
-                print(self.fruits)
+                print(self.dbArray)
                 self.OralDataViewTable.reloadData()
                 
             }
         })
-        return fruits
+        return dbArray
     }
     
     @IBAction func button1(_ sender: Any) {
@@ -118,7 +120,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         //var fruits1 = loadData()
         print("fruitscounts")
         //print(fruits1.count)
-        return fruits.count//return10とかなら行数10まで表示
+        if(dbArray.count > 10){
+            return 10
+        }else{
+            return dbArray.count//return10とかなら行数10まで表示
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -128,7 +134,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         // セルを取得する
         let cell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "OralData", for: indexPath)
         // セルに表示する値を設定する
-        cell.textLabel!.text = fruits[indexPath.row]
+        cell.textLabel!.text = dbArray[indexPath.row]
         return cell
     }
     
